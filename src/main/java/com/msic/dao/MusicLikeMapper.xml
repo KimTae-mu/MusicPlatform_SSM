@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msic.dao.MusicLikeMapper" >
+  <resultMap id="BaseResultMap" type="com.msic.pojo.MusicLike" >
+    <id column="msic_id" property="msicId" jdbcType="INTEGER" />
+    <result column="popular" property="popular" jdbcType="REAL" />
+    <result column="ballad" property="ballad" jdbcType="REAL" />
+    <result column="rock" property="rock" jdbcType="REAL" />
+    <result column="folk" property="folk" jdbcType="REAL" />
+    <result column="Electronica" property="electronica" jdbcType="REAL" />
+    <result column="dance" property="dance" jdbcType="REAL" />
+    <result column="light" property="light" jdbcType="REAL" />
+    <result column="classical" property="classical" jdbcType="REAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    msic_id, popular, ballad, rock, folk, Electronica, dance, light, classical
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.msic.pojo.MusicLikeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from music_like
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from music_like
+    where msic_id = #{msicId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from music_like
+    where msic_id = #{msicId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.msic.pojo.MusicLikeExample" >
+    delete from music_like
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.msic.pojo.MusicLike" >
+    insert into music_like (msic_id, popular, ballad, 
+      rock, folk, Electronica, dance, 
+      light, classical)
+    values (#{msicId,jdbcType=INTEGER}, #{popular,jdbcType=REAL}, #{ballad,jdbcType=REAL}, 
+      #{rock,jdbcType=REAL}, #{folk,jdbcType=REAL}, #{electronica,jdbcType=REAL}, #{dance,jdbcType=REAL}, 
+      #{light,jdbcType=REAL}, #{classical,jdbcType=REAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.msic.pojo.MusicLike" >
+    insert into music_like
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="msicId != null" >
+        msic_id,
+      </if>
+      <if test="popular != null" >
+        popular,
+      </if>
+      <if test="ballad != null" >
+        ballad,
+      </if>
+      <if test="rock != null" >
+        rock,
+      </if>
+      <if test="folk != null" >
+        folk,
+      </if>
+      <if test="electronica != null" >
+        Electronica,
+      </if>
+      <if test="dance != null" >
+        dance,
+      </if>
+      <if test="light != null" >
+        light,
+      </if>
+      <if test="classical != null" >
+        classical,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="msicId != null" >
+        #{msicId,jdbcType=INTEGER},
+      </if>
+      <if test="popular != null" >
+        #{popular,jdbcType=REAL},
+      </if>
+      <if test="ballad != null" >
+        #{ballad,jdbcType=REAL},
+      </if>
+      <if test="rock != null" >
+        #{rock,jdbcType=REAL},
+      </if>
+      <if test="folk != null" >
+        #{folk,jdbcType=REAL},
+      </if>
+      <if test="electronica != null" >
+        #{electronica,jdbcType=REAL},
+      </if>
+      <if test="dance != null" >
+        #{dance,jdbcType=REAL},
+      </if>
+      <if test="light != null" >
+        #{light,jdbcType=REAL},
+      </if>
+      <if test="classical != null" >
+        #{classical,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.msic.pojo.MusicLikeExample" resultType="java.lang.Integer" >
+    select count(*) from music_like
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update music_like
+    <set >
+      <if test="record.msicId != null" >
+        msic_id = #{record.msicId,jdbcType=INTEGER},
+      </if>
+      <if test="record.popular != null" >
+        popular = #{record.popular,jdbcType=REAL},
+      </if>
+      <if test="record.ballad != null" >
+        ballad = #{record.ballad,jdbcType=REAL},
+      </if>
+      <if test="record.rock != null" >
+        rock = #{record.rock,jdbcType=REAL},
+      </if>
+      <if test="record.folk != null" >
+        folk = #{record.folk,jdbcType=REAL},
+      </if>
+      <if test="record.electronica != null" >
+        Electronica = #{record.electronica,jdbcType=REAL},
+      </if>
+      <if test="record.dance != null" >
+        dance = #{record.dance,jdbcType=REAL},
+      </if>
+      <if test="record.light != null" >
+        light = #{record.light,jdbcType=REAL},
+      </if>
+      <if test="record.classical != null" >
+        classical = #{record.classical,jdbcType=REAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update music_like
+    set msic_id = #{record.msicId,jdbcType=INTEGER},
+      popular = #{record.popular,jdbcType=REAL},
+      ballad = #{record.ballad,jdbcType=REAL},
+      rock = #{record.rock,jdbcType=REAL},
+      folk = #{record.folk,jdbcType=REAL},
+      Electronica = #{record.electronica,jdbcType=REAL},
+      dance = #{record.dance,jdbcType=REAL},
+      light = #{record.light,jdbcType=REAL},
+      classical = #{record.classical,jdbcType=REAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.msic.pojo.MusicLike" >
+    update music_like
+    <set >
+      <if test="popular != null" >
+        popular = #{popular,jdbcType=REAL},
+      </if>
+      <if test="ballad != null" >
+        ballad = #{ballad,jdbcType=REAL},
+      </if>
+      <if test="rock != null" >
+        rock = #{rock,jdbcType=REAL},
+      </if>
+      <if test="folk != null" >
+        folk = #{folk,jdbcType=REAL},
+      </if>
+      <if test="electronica != null" >
+        Electronica = #{electronica,jdbcType=REAL},
+      </if>
+      <if test="dance != null" >
+        dance = #{dance,jdbcType=REAL},
+      </if>
+      <if test="light != null" >
+        light = #{light,jdbcType=REAL},
+      </if>
+      <if test="classical != null" >
+        classical = #{classical,jdbcType=REAL},
+      </if>
+    </set>
+    where msic_id = #{msicId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.msic.pojo.MusicLike" >
+    update music_like
+    set popular = #{popular,jdbcType=REAL},
+      ballad = #{ballad,jdbcType=REAL},
+      rock = #{rock,jdbcType=REAL},
+      folk = #{folk,jdbcType=REAL},
+      Electronica = #{electronica,jdbcType=REAL},
+      dance = #{dance,jdbcType=REAL},
+      light = #{light,jdbcType=REAL},
+      classical = #{classical,jdbcType=REAL}
+    where msic_id = #{msicId,jdbcType=INTEGER}
+  </update>
+</mapper>
