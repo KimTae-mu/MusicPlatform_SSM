@@ -28,7 +28,7 @@
           <a class="btn btn-link pull-right visible-xs" data-toggle="class:show" data-target=".nav-primary">
             <i class="fa fa-bars"></i>
           </a>
-          <a href="index.html" class="navbar-brand">Documents</a>
+          <a href="${pageContext.request.contextPath }/jsp/index.html" class="navbar-brand">Documents</a>
         </header>
         <section class="scrollable">
           <nav class="nav-primary hidden-xs nav-docs">
@@ -618,12 +618,12 @@
                 <code>data-replace</code> replace the location<br>                
               </p>
               <h5><strong>Example</strong></h5>
-              <a href="ajax.pie.html" data-bjax data-target="#bjax-target" class="btn btn-default">Load Me</a>
-              <a href="blog.html" data-bjax data-target="#bjax-target" data-el="#content .row" class="btn btn-default">Load Page Element</a>
-              <a href="index.html" data-bjax class="btn btn-default">Load Page</a>
+              <a href="${pageContext.request.contextPath }/jsp/ajax.pie.jsp" data-bjax data-target="#bjax-target" class="btn btn-default">Load Me</a>
+              <a href="${pageContext.request.contextPath }/jsp/blog.jsp" data-bjax data-target="#bjax-target" data-el="#content .row" class="btn btn-default">Load Page Element</a>
+              <a href="${pageContext.request.contextPath }/jsp/index.jsp" data-bjax class="btn btn-default">Load Page</a>
               <div id="bjax-target" class="clearfix m-t m-b"></div>
 
-              <pre><code class="html"><a href="blog.html" data-bjax data-target="#bjax-target" data-el="#content .row" class="btn btn-default">Load Page Element</a></code></pre>
+              <pre><code class="html"><a href="${pageContext.request.contextPath }/jsp/blog.jsp" data-bjax data-target="#bjax-target" data-el="#content .row" class="btn btn-default">Load Page Element</a></code></pre>
               <h4 id="button-state" class="m-t-lg">Button state</h4>
               <p>Change the button state when click on it. add <code>.text</code> <code>.text-active</code></p>
               <h5><strong>Example</strong></h5>

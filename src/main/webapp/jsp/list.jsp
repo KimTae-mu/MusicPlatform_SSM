@@ -6,18 +6,18 @@
   <title>Musik | Web Application</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css" />
-  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-  <link rel="stylesheet" href="css/animate.css" type="text/css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
-  <link rel="stylesheet" href="css/font.css" type="text/css" />
-  <link rel="stylesheet" href="css/app.css" type="text/css" />  
-  <link rel="stylesheet" href="js/nestable/nestable.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/js/jPlayer/jplayer.flat.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/app.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/js/nestable/nestable.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="js/ie/html5shiv.js"></script>
-    <script src="js/ie/respond.min.js"></script>
-    <script src="js/ie/excanvas.js"></script>
+    <script src="${pageContext.request.contextPath }/js/ie/html5shiv.js"></script>
+    <script src="${pageContext.request.contextPath }/js/ie/respond.min.js"></script>
+    <script src="${pageContext.request.contextPath }/js/ie/excanvas.js"></script>
   <![endif]-->
 </head>
 <body class="">
@@ -27,9 +27,9 @@
         <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
           <i class="icon-list"></i>
         </a>
-        <a href="index.html" class="navbar-brand text-lt">
+        <a href="${pageContext.request.contextPath }/index.jsp" class="navbar-brand text-lt">
           <i class="icon-earphones"></i>
-          <img src="images/logo.png" alt="." class="hide">
+          <img src="${pageContext.request.contextPath }/images/logo.png" alt="." class="hide">
           <span class="hidden-nav-xs m-l-sm">Musik</span>
         </a>
         <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
@@ -68,7 +68,7 @@
                 <div class="list-group list-group-alt">
                   <a href="#" class="media list-group-item">
                     <span class="pull-left thumb-sm">
-                      <img src="images/a0.png" alt="..." class="img-circle">
+                      <img src="${pageContext.request.contextPath }/images/a0.png" alt="..." class="img-circle">
                     </span>
                     <span class="media-body block m-b-none">
                       Use awesome animate.css<br>
@@ -92,7 +92,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="images/a0.png" alt="...">
+                <img src="${pageContext.request.contextPath }/images/a0.png" alt="...">
               </span>
               John.Smith <b class="caret"></b>
             </a>
@@ -102,7 +102,7 @@
                 <a href="#">Settings</a>
               </li>
               <li>
-                <a href="profile.html">Profile</a>
+                <a href="profile.jsp">Profile</a>
               </li>
               <li>
                 <a href="#">
@@ -111,11 +111,11 @@
                 </a>
               </li>
               <li>
-                <a href="docs.html">Help</a>
+                <a href="docs.jsp">Help</a>
               </li>
               <li class="divider"></li>
               <li>
-                <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+                <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a>
               </li>
             </ul>
           </li>
@@ -139,32 +139,32 @@
                       Discover
                     </li>
                     <li>
-                      <a href="index.html">
+                      <a href="index.jsp">
                         <i class="icon-disc icon text-success"></i>
                         <span class="font-bold">What's new</span>
                       </a>
                     </li>
                     <li>
-                      <a href="genres.html">
+                      <a href="genres.jsp">
                         <i class="icon-music-tone-alt icon text-info"></i>
                         <span class="font-bold">Genres</span>
                       </a>
                     </li>
                     <li>
-                      <a href="events.html">
+                      <a href="events.jsp">
                         <i class="icon-drawer icon text-primary-lter"></i>
                         <b class="badge bg-primary pull-right">6</b>
                         <span class="font-bold">Events</span>
                       </a>
                     </li>
                     <li>
-                      <a href="listen.html">
+                      <a href="listen.jsp">
                         <i class="icon-list icon  text-info-dker"></i>
                         <span class="font-bold">Listen</span>
                       </a>
                     </li>
                     <li>
-                      <a href="video.html" data-target="#content" data-el="#bjax-el" data-replace="true">
+                      <a href="video.jsp" data-target="#content" data-el="#bjax-el" data-replace="true">
                         <i class="icon-social-youtube icon  text-primary"></i>
                         <span class="font-bold">Video</span>
                       </a>
@@ -187,21 +187,21 @@
                       </a>
                       <ul class="nav dk text-sm">
                         <li >
-                          <a href="layout-color.html" class="auto">                                                        
+                          <a href="layout-color.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Color option</span>
                           </a>
                         </li>
                         <li >
-                          <a href="layout-boxed.html" class="auto">                                                        
+                          <a href="layout-boxed.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Boxed layout</span>
                           </a>
                         </li>
                         <li >
-                          <a href="layout-fluid.html" class="auto">                                                        
+                          <a href="layout-fluid.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Fluid layout</span>
@@ -221,14 +221,14 @@
                       </a>
                       <ul class="nav dk text-sm">
                         <li >
-                          <a href="buttons.html" class="auto">                                                        
+                          <a href="buttons.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Buttons</span>
                           </a>
                         </li>
                         <li >
-                          <a href="icons.html" class="auto">                            
+                          <a href="icons.jsp" class="auto">                            
                             <b class="badge bg-info pull-right">369</b>                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
@@ -243,14 +243,14 @@
                           </a>
                         </li>
                         <li >
-                          <a href="grid.html" class="auto">                                                        
+                          <a href="grid.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Grid</span>
                           </a>
                         </li>
                         <li >
-                          <a href="widgets.html" class="auto">                            
+                          <a href="widgets.jsp" class="auto">                            
                             <b class="badge bg-dark pull-right">8</b>                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
@@ -258,14 +258,14 @@
                           </a>
                         </li>
                         <li >
-                          <a href="components.html" class="auto">                                                        
+                          <a href="components.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Components</span>
                           </a>
                         </li>
                         <li  class="active">
-                          <a href="list.html" class="auto">                                                        
+                          <a href="list.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>List group</span>
@@ -283,13 +283,13 @@
                           </a>
                           <ul class="nav dker">
                             <li >
-                              <a href="table-static.html">
+                              <a href="table-static.jsp">
                                 <i class="fa fa-angle-right"></i>
                                 <span>Table static</span>
                               </a>
                             </li>
                             <li >
-                              <a href="table-datatable.html">
+                              <a href="table-datatable.jsp">
                                 <i class="fa fa-angle-right"></i>
                                 <span>Datatable</span>
                               </a>
@@ -308,19 +308,19 @@
                           </a>
                           <ul class="nav dker">
                             <li >
-                              <a href="form-elements.html">
+                              <a href="form-elements.jsp">
                                 <i class="fa fa-angle-right"></i>
                                 <span>Form elements</span>
                               </a>
                             </li>
                             <li >
-                              <a href="form-validation.html">
+                              <a href="form-validation.jsp">
                                 <i class="fa fa-angle-right"></i>
                                 <span>Form validation</span>
                               </a>
                             </li>
                             <li >
-                              <a href="form-wizard.html">
+                              <a href="form-wizard.jsp">
                                 <i class="fa fa-angle-right"></i>
                                 <span>Form wizard</span>
                               </a>
@@ -328,21 +328,21 @@
                           </ul>
                         </li>
                         <li >
-                          <a href="chart.html" class="auto">                                                        
+                          <a href="chart.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Chart</span>
                           </a>
                         </li>
                         <li >
-                          <a href="portlet.html" class="auto">                                                        
+                          <a href="portlet.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Portlet</span>
                           </a>
                         </li>
                         <li >
-                          <a href="timeline.html" class="auto">                                                        
+                          <a href="timeline.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Timeline</span>
@@ -362,56 +362,56 @@
                       </a>
                       <ul class="nav dk text-sm">
                         <li >
-                          <a href="profile.html" class="auto">                                                        
+                          <a href="profile.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Profile</span>
                           </a>
                         </li>
                         <li >
-                          <a href="blog.html" class="auto">                                                        
+                          <a href="blog.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Blog</span>
                           </a>
                         </li>
                         <li >
-                          <a href="invoice.html" class="auto">                                                        
+                          <a href="invoice.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Invoice</span>
                           </a>
                         </li>
                         <li >
-                          <a href="gmap.html" class="auto">                                                        
+                          <a href="gmap.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Google Map</span>
                           </a>
                         </li>
                         <li >
-                          <a href="jvectormap.html" class="auto">                                                        
+                          <a href="jvectormap.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Vector Map</span>
                           </a>
                         </li>
                         <li >
-                          <a href="signin.html" class="auto">                                                        
+                          <a href="signin.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Signin</span>
                           </a>
                         </li>
                         <li >
-                          <a href="signup.html" class="auto">                                                        
+                          <a href="signup.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Signup</span>
                           </a>
                         </li>
                         <li >
-                          <a href="404.html" class="auto">                                                        
+                          <a href="404.jsp" class="auto">                                                        
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>404</span>
@@ -449,7 +449,7 @@
                   <div class="dropdown dropup wrapper-sm clearfix">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <span class="thumb-sm avatar pull-left m-l-xs">                        
-                        <img src="images/a3.png" class="dker" alt="...">
+                        <img src="${pageContext.request.contextPath }/images/a3.png" class="dker" alt="...">
                         <i class="on b-black"></i>
                       </span>
                       <span class="hidden-nav-xs clear">
@@ -466,7 +466,7 @@
                         <a href="#">Settings</a>
                       </li>
                       <li>
-                        <a href="profile.html">Profile</a>
+                        <a href="profile.jsp">Profile</a>
                       </li>
                       <li>
                         <a href="#">
@@ -475,11 +475,11 @@
                         </a>
                       </li>
                       <li>
-                        <a href="docs.html">Help</a>
+                        <a href="docs.jsp">Help</a>
                       </li>
                       <li class="divider"></li>
                       <li>
-                        <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+                        <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a>
                       </li>
                     </ul>
                   </div>
@@ -705,7 +705,7 @@
                     <ul class="list-group alt">
                       <li class="list-group-item">
                         <div class="media">
-                          <span class="pull-left thumb-sm"><img src="images/a0.png" alt="John said" class="img-circle"></span>
+                          <span class="pull-left thumb-sm"><img src="${pageContext.request.contextPath }/images/a0.png" alt="John said" class="img-circle"></span>
                           <div class="pull-right text-success m-t-sm">
                             <i class="fa fa-circle"></i>
                           </div>
@@ -717,7 +717,7 @@
                       </li>
                       <li class="list-group-item">
                         <div class="media">
-                          <span class="pull-left thumb-sm"><img src="images/a0.png" alt="John said" class="img-circle"></span>
+                          <span class="pull-left thumb-sm"><img src="${pageContext.request.contextPath }/images/a0.png" alt="John said" class="img-circle"></span>
                           <div class="pull-right text-muted m-t-sm">
                             <i class="fa fa-circle"></i>
                           </div>
@@ -729,7 +729,7 @@
                       </li>
                       <li class="list-group-item">
                         <div class="media">
-                          <span class="pull-left thumb-sm"><img src="images/a0.png" alt="John said" class="img-circle"></span>
+                          <span class="pull-left thumb-sm"><img src="${pageContext.request.contextPath }/images/a0.png" alt="John said" class="img-circle"></span>
                           <div class="pull-right text-warning m-t-sm">
                             <i class="fa fa-circle"></i>
                           </div>
@@ -741,7 +741,7 @@
                       </li>
                       <li class="list-group-item">
                         <div class="media">
-                          <span class="pull-left thumb-sm"><img src="images/a0.png" alt="John said" class="img-circle"></span>
+                          <span class="pull-left thumb-sm"><img src="${pageContext.request.contextPath }/images/a0.png" alt="John said" class="img-circle"></span>
                           <div class="pull-right text-danger m-t-sm">
                             <i class="fa fa-circle"></i>
                           </div>
@@ -762,19 +762,19 @@
       </section>
     </section>    
   </section>
-  <script src="js/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/jquery.min.js"></script>
   <!-- Bootstrap -->
-  <script src="js/bootstrap.js"></script>
+  <script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
   <!-- App -->
-  <script src="js/app.js"></script>  
-  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
-  <script src="js/sortable/jquery.sortable.js"></script>
-<script src="js/nestable/jquery.nestable.js"></script>
-<script src="js/nestable/demo.js"></script>
-  <script src="js/app.plugin.js"></script>
-  <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+  <script src="${pageContext.request.contextPath }/js/app.js"></script>
+  <script src="${pageContext.request.contextPath }/js/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/sortable/jquery.sortable.js"></script>
+<script src="${pageContext.request.contextPath }/js/nestable/jquery.nestable.js"></script>
+<script src="${pageContext.request.contextPath }/js/nestable/demo.js"></script>
+  <script src="${pageContext.request.contextPath }/js/app.plugin.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath }/js/jPlayer/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath }/js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath }/js/jPlayer/demo.js"></script>
 
 </body>
 </html>

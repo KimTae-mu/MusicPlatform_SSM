@@ -27,7 +27,7 @@
           <h1 class="h text-white animated fadeInDownBig">404</h1>
         </div>
         <div class="list-group auto m-b-sm m-b-lg">
-          <a href="index.html" class="list-group-item">
+          <a href="${pageContext.request.contextPath }/jsp/index.jsp" class="list-group-item">
             <i class="fa fa-chevron-right icon-muted"></i>
             <i class="fa fa-fw fa-home icon-muted"></i> Goto homepage
           </a>
