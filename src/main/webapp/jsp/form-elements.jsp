@@ -6,20 +6,20 @@
   <title>Musik | Web Application</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <link rel="stylesheet" href="js/jPlayer/jplayer.flat.css" type="text/css" />
-  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-  <link rel="stylesheet" href="css/animate.css" type="text/css" />
-  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
-  <link rel="stylesheet" href="css/simple-line-icons.css" type="text/css" />
-  <link rel="stylesheet" href="css/font.css" type="text/css" />
-  <link rel="stylesheet" href="css/app.css" type="text/css" />  
-  <link rel="stylesheet" href="js/datepicker/datepicker.css" type="text/css" />
-<link rel="stylesheet" href="js/slider/slider.css" type="text/css" />
-<link rel="stylesheet" href="js/chosen/chosen.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/js/jPlayer/jplayer.flat.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/font.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/css/app.css" type="text/css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath }/js/datepicker/datepicker.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/js/slider/slider.css" type="text/css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/js/chosen/chosen.css" type="text/css" />
   <!--[if lt IE 9]>
-    <script src="js/ie/html5shiv.js"></script>
-    <script src="js/ie/respond.min.js"></script>
-    <script src="js/ie/excanvas.js"></script>
+    <script src="${pageContext.request.contextPath }/js/ie/html5shiv.js"></script>
+    <script src="${pageContext.request.contextPath }/js/ie/respond.min.js"></script>
+    <script src="${pageContext.request.contextPath }/js/ie/excanvas.js"></script>
   <![endif]-->
 </head>
 <body class="">
@@ -29,9 +29,9 @@
         <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
           <i class="icon-list"></i>
         </a>
-        <a href="index.html" class="navbar-brand text-lt">
+        <a href="${pageContext.request.contextPath }/index.jsp" class="navbar-brand text-lt">
           <i class="icon-earphones"></i>
-          <img src="images/logo.png" alt="." class="hide">
+          <img src="${pageContext.request.contextPath }/images/logo.png" alt="." class="hide">
           <span class="hidden-nav-xs m-l-sm">Musik</span>
         </a>
         <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
@@ -70,7 +70,7 @@
                 <div class="list-group list-group-alt">
                   <a href="#" class="media list-group-item">
                     <span class="pull-left thumb-sm">
-                      <img src="images/a0.png" alt="..." class="img-circle">
+                      <img src="${pageContext.request.contextPath }/images/a0.png" alt="..." class="img-circle">
                     </span>
                     <span class="media-body block m-b-none">
                       Use awesome animate.css<br>
@@ -94,7 +94,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
               <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="images/a0.png" alt="...">
+                <img src="${pageContext.request.contextPath }/images/a0.png" alt="...">
               </span>
               John.Smith <b class="caret"></b>
             </a>
@@ -451,7 +451,7 @@
                   <div class="dropdown dropup wrapper-sm clearfix">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <span class="thumb-sm avatar pull-left m-l-xs">                        
-                        <img src="images/a3.png" class="dker" alt="...">
+                        <img src="${pageContext.request.contextPath }/images/a3.png" class="dker" alt="...">
                         <i class="on b-black"></i>
                       </span>
                       <span class="hidden-nav-xs clear">
@@ -1214,12 +1214,12 @@
       </section>
     </section>    
   </section>
-  <script src="js/jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/jquery.min.js"></script>
   <!-- Bootstrap -->
-  <script src="js/bootstrap.js"></script>
+  <script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
   <!-- App -->
-  <script src="js/app.js"></script>  
-  <script src="js/slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/app.js"></script>
+  <script src="${pageContext.request.contextPath }/js/slimscroll/jquery.slimscroll.min.js"></script>
     <div class="modal fade" id="modal-form">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -1259,24 +1259,24 @@
     </div><!-- /.modal-dialog -->
   </div>
   <!-- datepicker -->
-  <script src="js/datepicker/bootstrap-datepicker.js"></script>
+  <script src="${pageContext.request.contextPath }/js/datepicker/bootstrap-datepicker.js"></script>
   <!-- slider -->
-  <script src="js/slider/bootstrap-slider.js"></script>
+  <script src="${pageContext.request.contextPath }/js/slider/bootstrap-slider.js"></script>
   <!-- file input -->  
-  <script src="js/file-input/bootstrap-filestyle.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/file-input/bootstrap-filestyle.min.js"></script>
   <!-- wysiwyg -->
-  <script src="js/wysiwyg/jquery.hotkeys.js"></script>
-  <script src="js/wysiwyg/bootstrap-wysiwyg.js"></script>
-  <script src="js/wysiwyg/demo.js"></script>
+  <script src="${pageContext.request.contextPath }/js/wysiwyg/jquery.hotkeys.js"></script>
+  <script src="${pageContext.request.contextPath }/js/wysiwyg/bootstrap-wysiwyg.js"></script>
+  <script src="${pageContext.request.contextPath }/js/wysiwyg/demo.js"></script>
   <!-- markdown -->
-  <script src="js/markdown/epiceditor.min.js"></script>
-  <script src="js/markdown/demo.js"></script>
+  <script src="${pageContext.request.contextPath }/js/markdown/epiceditor.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/markdown/demo.js"></script>
 
-  <script src="js/chosen/chosen.jquery.min.js"></script>
-  <script src="js/app.plugin.js"></script>
-  <script type="text/javascript" src="js/jPlayer/jquery.jplayer.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/add-on/jplayer.playlist.min.js"></script>
-  <script type="text/javascript" src="js/jPlayer/demo.js"></script>
+  <script src="${pageContext.request.contextPath }/js/chosen/chosen.jquery.min.js"></script>
+  <script src="${pageContext.request.contextPath }/js/app.plugin.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath }/js/jPlayer/jquery.jplayer.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath }/js/jPlayer/add-on/jplayer.playlist.min.js"></script>
+  <script type="text/javascript" src="${pageContext.request.contextPath }/js/jPlayer/demo.js"></script>
 
 </body>
 </html>
