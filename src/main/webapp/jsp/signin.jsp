@@ -13,11 +13,23 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/simple-line-icons.css" type="text/css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/font.css" type="text/css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/app.css" type="text/css" />
+  <script src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>
     <!--[if lt IE 9]>
     <script src="${pageContext.request.contextPath }/js/ie/html5shiv.js"></script>
     <script src="${pageContext.request.contextPath }/js/ie/respond.min.js"></script>
     <script src="${pageContext.request.contextPath }/js/ie/excanvas.js"></script>
+
+
   <![endif]-->
+  <script type="text/javascript">
+      $(function () {
+          $("#submittest").click(function () {
+              var url="";
+              var params={"email":${}};
+          })
+
+      })
+  </script>
 </head>
 <body class="bg-info dker">
   <section id="content" class="m-t-lg wrapper-md animated fadeInUp">    
@@ -27,14 +39,14 @@
         <header class="wrapper text-center">
           <strong>Sign in to get in touch</strong>
         </header>
-        <form action="index.jsp">
+        <form action="${pageContext.request.contextPath}/user/submit.action" method="post">
           <div class="form-group">
-            <input type="email" placeholder="Email" class="form-control rounded input-lg text-center no-border">
+            <input type="email" placeholder="email" class="form-control rounded input-lg text-center no-border" name="email">
           </div>
           <div class="form-group">
-             <input type="password" placeholder="Password" class="form-control rounded input-lg text-center no-border">
+             <input type="password" placeholder="Password" class="form-control rounded input-lg text-center no-border" name="password">
           </div>
-          <button type="submit" class="btn btn-lg btn-warning lt b-white b-2x btn-block btn-rounded"><i class="icon-arrow-right pull-right"></i><span class="m-r-n-lg">Sign in</span></button>
+          <button type="submit" id="submittest" class="btn btn-lg btn-warning lt b-white b-2x btn-block btn-rounded"><i class="icon-arrow-right pull-right"></i><span class="m-r-n-lg">Sign in</span></button>
           <div class="text-center m-t m-b"><a href="#"><small>Forgot password?</small></a></div>
           <div class="line line-dashed"></div>
           <p class="text-muted text-center"><small>Do not have an account?</small></p>
@@ -53,6 +65,7 @@
   </footer>
   <!-- / footer -->
   <script src="${pageContext.request.contextPath }/js/jquery.min.js"></script>
+  <%--<script src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>--%>
   <!-- Bootstrap -->
   <script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
   <!-- App -->
