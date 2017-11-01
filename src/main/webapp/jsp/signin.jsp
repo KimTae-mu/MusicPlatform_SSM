@@ -25,7 +25,8 @@
       $(function () {
           $("#submittest").click(function () {
               var url="";
-              var params={"email":${}};
+              var params={"email":$("input[name='email']").val(),"password":$("input[name='password']").val()};
+              alert(params);
           })
 
       })
