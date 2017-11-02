@@ -4,4 +4,8 @@ import com.msic.pojo.User;
 
 public interface UserService {
     public User findUserByUsernameAndPwd(String email, String password);
+
+    public String insertUser(User user);
+
+    public User checkCode(String userName);
 }

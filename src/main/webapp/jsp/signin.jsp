@@ -21,16 +21,27 @@
 
 
   <![endif]-->
-  <script type="text/javascript">
+<%--  <script type="text/javascript">
       $(function () {
           $("#submittest").click(function () {
-              var url="";
+              var url="submit.action";
               var params={"email":$("input[name='email']").val(),"password":$("input[name='password']").val()};
-              alert(params);
+                  $.ajax({
+                      url:url,
+                      type:"post",
+                      data:params,
+                      success:function () {
+//                          alert("chenggong");
+                          confirm("chenggong");
+                      },
+                      error:function () {
+                          alert("chucuo");
+                      },
+                      dataType:"json"
+                  });
           })
-
       })
-  </script>
+  </script>--%>
 </head>
 <body class="bg-info dker">
   <section id="content" class="m-t-lg wrapper-md animated fadeInUp">    
@@ -43,6 +54,7 @@
         <form action="${pageContext.request.contextPath}/user/submit.action" method="post">
           <div class="form-group">
             <input type="email" placeholder="email" class="form-control rounded input-lg text-center no-border" name="email">
+            <span class="text-muted text-center" id="emailInfo"></span>
           </div>
           <div class="form-group">
              <input type="password" placeholder="Password" class="form-control rounded input-lg text-center no-border" name="password">

@@ -13,11 +13,55 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/simple-line-icons.css" type="text/css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/font.css" type="text/css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/app.css" type="text/css" />
+  <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>
     <!--[if lt IE 9]>
     <script src="${pageContext.request.contextPath }/js/ie/html5shiv.js"></script>
     <script src="${pageContext.request.contextPath }/js/ie/respond.min.js"></script>
     <script src="${pageContext.request.contextPath }/js/ie/excanvas.js"></script>
   <![endif]-->
+  <script type="application/javascript">
+      //验证登陆名
+      function checkCode() {
+          //获取用户输入的登陆名
+          var code=$("#userName").val();
+          //进行判断
+          if(code.trim()==""){
+              $("#userNameID").addClass("error");
+              $("#userNameID").html("登录名不能为空");
+          }else {
+              //登陆名不为空,ajax请求，验证用户是否存在
+              var url="${pageContext.request.contextPath }/user/checkCode.action";
+//            var param={"user_code":code};
+              $.ajax({
+                  url:url,
+                  type:"post",
+                  data:{"userName":code},
+                  success:function (data) {
+                      alert(data);
+//                      //操作data，进行判断
+//                      if(data && data == "no"){
+//                          //提示
+//                          $("#userNameID").addClass("error");
+//                          $("#userNameID").html("登录名已经存在");
+//                      }else {
+//                          $("#userNameID").removeClass("error");
+//                          $("#userNameID").html("可以注册");
+//                      }
+                  }
+              });
+          }
+      }
+
+      //可以阻止表单的提交
+      function checkForm() {
+          //先让校验名称的方法执行一下
+          checkCode();
+          //获取error的数量，如果数量>0，说明存在错误，不能提交表单
+          if($(".error").size() > 0){
+              return false;
+          }
+      }
+  </script>
 </head>
 <body class="bg-info dker">
   <section id="content" class="m-t-lg wrapper-md animated fadeInDown">
@@ -27,22 +71,24 @@
         <header class="wrapper text-center">
           <strong>Sign up to find interesting thing</strong>
         </header>
-        <form action="index.jsp">
+        <%--${pageContext.request.contextPath }/user/register.action--%>
+        <form action="#" method="post" onsubmit="return checkForm()">
           <div class="form-group">
-            <input placeholder="Name" class="form-control rounded input-lg text-center no-border">
+            <input placeholder="用户名" id="userName" name="userName" class="form-control rounded input-lg text-center no-border">
+            <SPAN id="userNameID" style="FONT-WEIGHT: bold;"></SPAN>
           </div>
           <div class="form-group">
-            <input type="email" placeholder="Email" class="form-control rounded input-lg text-center no-border">
+            <input type="email" placeholder="Email" id="userEmail" name="userEmail" class="form-control rounded input-lg text-center no-border">
           </div>
           <div class="form-group">
-             <input type="password" placeholder="Password" class="form-control rounded input-lg text-center no-border">
+             <input type="password" placeholder="密码" id="userPassword" name="userPassword" class="form-control rounded input-lg text-center no-border">
           </div>
           <div class="checkbox i-checks m-b">
             <label class="m-l">
               <input type="checkbox" checked=""><i></i> Agree the <a href="#">terms and policy</a>
             </label>
           </div>
-          <button type="submit" class="btn btn-lg btn-warning lt b-white b-2x btn-block btn-rounded"><i class="icon-arrow-right pull-right"></i><span class="m-r-n-lg">Sign up</span></button>
+          <button type="submit" id="signup" class="btn btn-lg btn-warning lt b-white b-2x btn-block btn-rounded"><i class="icon-arrow-right pull-right"></i><span class="m-r-n-lg">Sign up</span></button>
           <div class="line line-dashed"></div>
           <p class="text-muted text-center"><small>Already have an account?</small></p>
           <a href="signin.jsp" class="btn btn-lg btn-info btn-block btn-rounded">Sign in</a>
@@ -59,7 +105,7 @@
     </div>
   </footer>
   <!-- / footer -->
-  <script src="${pageContext.request.contextPath }/js/jquery.min.js"></script>
+  <%--<script src="${pageContext.request.contextPath }/js/jquery.min.js"></script>--%>
   <!-- Bootstrap -->
   <script src="${pageContext.request.contextPath }/js/bootstrap.js"></script>
   <!-- App -->
