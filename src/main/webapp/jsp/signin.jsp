@@ -21,27 +21,14 @@
 
 
   <![endif]-->
-<%--  <script type="text/javascript">
+
+  <script type="text/javascript">
       $(function () {
-          $("#submittest").click(function () {
-              var url="submit.action";
-              var params={"email":$("input[name='email']").val(),"password":$("input[name='password']").val()};
-                  $.ajax({
-                      url:url,
-                      type:"post",
-                      data:params,
-                      success:function () {
-//                          alert("chenggong");
-                          confirm("chenggong");
-                      },
-                      error:function () {
-                          alert("chucuo");
-                      },
-                      dataType:"json"
-                  });
-          })
+          if("${loginmsg }".valueOf() == ""){
+          }else alert("${loginmsg }");
       })
-  </script>--%>
+  </script>
+
 </head>
 <body class="bg-info dker">
   <section id="content" class="m-t-lg wrapper-md animated fadeInUp">    
@@ -63,7 +50,7 @@
           <div class="text-center m-t m-b"><a href="#"><small>Forgot password?</small></a></div>
           <div class="line line-dashed"></div>
           <p class="text-muted text-center"><small>Do not have an account?</small></p>
-          <a href="signup.jsp" class="btn btn-lg btn-info btn-block rounded">Create an account</a>
+          <a href="${pageContext.request.contextPath }/user/signup.action" class="btn btn-lg btn-info btn-block rounded">Create an account</a>
         </form>
       </section>
     </div>

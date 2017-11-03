@@ -19,8 +19,8 @@ public class UserController {
     private UserService userService;
 
     //跳转到登录页面
-    @RequestMapping("/login")
-    public String login() throws Exception{
+    @RequestMapping("/signin")
+    public String signin() throws Exception{
         return "signin";
     }
 
@@ -39,23 +39,49 @@ public class UserController {
             session.setAttribute("user",user);
             return "forward:/jsp/index.jsp";
         }
-        else
-            return "forward:login.action";
+        else{
+            request.setAttribute("loginmsg","用户名或密码错误！！！");
+            return "forward:signin.action";
+        }
     }
 
     @RequestMapping("/register")
-    public String register(User user){
-        String s = userService.insertUser(user);
-        if (s != "true"){
-            return "forward:singup.action";
+    public String register(User user,HttpServletRequest request){
+        System.out.println("user====="+user);
+        if(user.getUserName().length()==0 || user.getUserEmail().length()==0 || user.getUserPassword().length()==0){
+//            return "forward:singup.action";
+            System.out.println("有东西为空了");
         }
-        return "forward:login.action";
+        String s = userService.insertUser(user);
+        System.out.println("s==="+s);
+        if (s == null){
+            request.setAttribute("msg","该用户已被注册！！！");
+            return "forward:signup.action";
+        }
+        return "forward:signin.action";
     }
 
-    @RequestMapping("/checkCode")
-    public String checkCode(User user, HttpServletResponse response) throws Exception{
-        User u=userService.checkCode(user.getUserName());
+    @RequestMapping("/checkName")
+    public String checkName(User user, HttpServletResponse response) throws Exception{
+        User u=userService.checkName(user.getUserName());
         System.out.println(u);
+        try {
+            PrintWriter writer = response.getWriter();
+            if(u != null){
+                System.out.println("no");
+                writer.print("no");
+            }else {
+                writer.print("yes");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @RequestMapping("/checkEmail")
+    public String checkEmail(User user,HttpServletResponse response) throws Exception{
+        User u=userService.checkEmail(user.getUserEmail());
         try {
             PrintWriter writer = response.getWriter();
             if(u != null){

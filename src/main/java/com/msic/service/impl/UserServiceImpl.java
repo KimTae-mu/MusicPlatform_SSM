@@ -6,6 +6,7 @@ import com.msic.pojo.UserExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.msic.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -36,8 +37,12 @@ public class UserServiceImpl implements UserService {
         UserExample.Criteria criteria = example.createCriteria();
         criteria.andUserNameEqualTo(user.getUserName());
 
+        UserExample.Criteria criteria1 = example.createCriteria();
+        criteria1.andUserEmailEqualTo(user.getUserEmail());
+        example.or(criteria1);
+
         List<User> list = userMapper.selectByExample(example);
-        if(list.size() > 0){
+        if(list != null && list.size() > 0){
             return null;
         }else{
             user.setExist(1);
@@ -46,10 +51,23 @@ public class UserServiceImpl implements UserService {
         }
     }
 
-    public User checkCode(String userName) {
+    public User checkName(String userName) {
         UserExample example=new UserExample();
         UserExample.Criteria criteria = example.createCriteria();
         criteria.andUserNameEqualTo(userName);
+
+        List<User> list = userMapper.selectByExample(example);
+
+        if(list != null && list.size() > 0){
+            return list.get(0);
+        }
+        return null;
+    }
+
+    public User checkEmail(String userEmail) {
+        UserExample example=new UserExample();
+        UserExample.Criteria criteria = example.createCriteria();
+        criteria.andUserEmailEqualTo(userEmail);
 
         List<User> list = userMapper.selectByExample(example);
 

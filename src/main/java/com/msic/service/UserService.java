@@ -7,5 +7,7 @@ public interface UserService {
 
     public String insertUser(User user);
 
-    public User checkCode(String userName);
+    public User checkName(String userName);
+
+    public User checkEmail(String userEmail);
 }
