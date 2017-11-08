@@ -19,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     //跳转到登录页面
-    @RequestMapping("/signin")
+        @RequestMapping("/signin")
     public String signin() throws Exception{
         return "signin";
     }
@@ -37,7 +37,7 @@ public class UserController {
         User user = userService.findUserByUsernameAndPwd(email, password);
         if(user != null){
             session.setAttribute("user",user);
-            return "forward:/jsp/index.jsp";
+            return "redirect:/jsp/index.jsp";
         }
         else{
             request.setAttribute("loginmsg","用户名或密码错误！！！");
@@ -94,6 +94,26 @@ public class UserController {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @RequestMapping("/ReLogin")
+    public String ReLogin(String password,HttpServletRequest request) throws Exception{
+
+        System.out.println("Relogin");
+//        if(password)
+
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+
+        User user1= userService.findUserByUsernameAndPwd(user.getUserEmail(), password);
+
+        if(user1 != null){
+            return "redirect:/jsp/index.jsp";
+        }
+        else{
+            request.setAttribute("loginmsg","密码错误！！！");
+            return "modal.lockme";
+        }
     }
 
 }

@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en" class="app">
 <head>  
@@ -54,70 +55,84 @@
       </form>
       <div class="navbar-right ">
         <ul class="nav navbar-nav m-n hidden-xs nav-user user">
-          <li class="hidden-xs">
-            <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
-              <i class="icon-bell"></i>
-              <span class="badge badge-sm up bg-danger count">2</span>
-            </a>
-            <section class="dropdown-menu aside-xl animated fadeInUp">
-              <section class="panel bg-white">
-                <div class="panel-heading b-light bg-light">
-                  <strong>You have <span class="count">2</span> notifications</strong>
-                </div>
-                <div class="list-group list-group-alt">
-                  <a href="#" class="media list-group-item">
-                    <span class="pull-left thumb-sm">
-                      <img src="${pageContext.request.contextPath }/images/a0.png" alt="..." class="img-circle">
-                    </span>
-                    <span class="media-body block m-b-none">
-                      Use awesome animate.css<br>
-                      <small class="text-muted">10 minutes ago</small>
-                    </span>
+
+
+            <c:if test="${user != null}">
+
+                <li class="hidden-xs">
+                  <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
+                    <i class="icon-bell"></i>
+                    <span class="badge badge-sm up bg-danger count">2</span>
                   </a>
-                  <a href="#" class="media list-group-item">
-                    <span class="media-body block m-b-none">
-                      1.0 initial released<br>
-                      <small class="text-muted">1 hour ago</small>
-                    </span>
+                  <section class="dropdown-menu aside-xl animated fadeInUp">
+                    <section class="panel bg-white">
+                      <div class="panel-heading b-light bg-light">
+                        <strong>You have <span class="count">2</span> notifications</strong>
+                      </div>
+                      <div class="list-group list-group-alt">
+                        <a href="#" class="media list-group-item">
+                      <span class="pull-left thumb-sm">
+                        <img src="${pageContext.request.contextPath }/images/a0.png" alt="..." class="img-circle">
+                      </span>
+                          <span class="media-body block m-b-none">
+                        Use awesome animate.css<br>
+                        <small class="text-muted">10 minutes ago</small>
+                      </span>
+                        </a>
+                        <a href="#" class="media list-group-item">
+                      <span class="media-body block m-b-none">
+                        1.0 initial released<br>
+                        <small class="text-muted">1 hour ago</small>
+                      </span>
+                        </a>
+                      </div>
+                      <div class="panel-footer text-sm">
+                        <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                        <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+                      </div>
+                    </section>
+                  </section>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
+                  <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
+                    <img src="${pageContext.request.contextPath }/images/a0.png" alt="...">
+                  </span>
+                      ${user.userName } <b class="caret"></b>
                   </a>
-                </div>
-                <div class="panel-footer text-sm">
-                  <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
-                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-                </div>
-              </section>
-            </section>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle bg clear" data-toggle="dropdown">
-              <span class="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                <img src="${pageContext.request.contextPath }/images/a0.png" alt="...">
-              </span>
-              John.Smith <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu animated fadeInRight">            
-              <li>
-                <span class="arrow top"></span>
-                <a href="#">Settings</a>
+                  <ul class="dropdown-menu animated fadeInRight">
+                    <li>
+                      <span class="arrow top"></span>
+                      <a href="#">Settings</a>
+                    </li>
+                    <li>
+                      <a href="${pageContext.request.contextPath }/jsp/profile.jsp">Profile</a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <span class="badge bg-danger pull-right">3</span>
+                        Notifications
+                      </a>
+                    </li>
+                    <li>
+                      <a href="${pageContext.request.contextPath }/jsp/docs.jsp">Help</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a>
+                    </li>
+                  </ul>
+                </li>
+
+            </c:if>
+            <c:if test="${user == null}">
+              <li class="dropdown">
+                <a class="text-bold text-black no-underline" href="${pageContext.request.contextPath }/user/signin.action" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign in</a>
               </li>
-              <li>
-                <a href="profile.jsp">Profile</a>
+              <li class="dropdown">
+                <a class="text-bold text-black no-underline" href="${pageContext.request.contextPath }/user/signup.action" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign up</a>
               </li>
-              <li>
-                <a href="#">
-                  <span class="badge bg-danger pull-right">3</span>
-                  Notifications
-                </a>
-              </li>
-              <li>
-                <a href="docs.jsp">Help</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a>
-              </li>
-            </ul>
-          </li>
+            </c:if>
         </ul>
       </div>      
     </header>
@@ -1183,145 +1198,156 @@
             </section>
             <!-- side content -->
             <aside class="aside-md bg-light dk" id="sidebar">
-              <section class="vbox animated fadeInRight">
-                <section class="w-f-md scrollable hover">
-                  <h4 class="font-thin m-l-md m-t">Connected</h4>
-                  <ul class="list-group no-bg no-borders auto m-t-n-xxs">
-                    <li class="list-group-item">
+
+
+            <c:if test="${user != null}">
+                <section class="vbox animated fadeInRight">
+                  <section class="w-f-md scrollable hover">
+                    <h4 class="font-thin m-l-md m-t">Connected</h4>
+                    <ul class="list-group no-bg no-borders auto m-t-n-xxs">
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a1.png" alt="..." class="img-circle">
                         <i class="on b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Chris Fox</a></div>
-                        <small class="text-muted">New York</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Chris Fox</a></div>
+                          <small class="text-muted">New York</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a2.png" alt="...">
                         <i class="on b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Amanda Conlan</a></div>
-                        <small class="text-muted">France</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Amanda Conlan</a></div>
+                          <small class="text-muted">France</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a3.png" alt="...">
                         <i class="busy b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Dan Doorack</a></div>
-                        <small class="text-muted">Hamburg</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Dan Doorack</a></div>
+                          <small class="text-muted">Hamburg</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a4.png" alt="...">
                         <i class="away b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Lauren Taylor</a></div>
-                        <small class="text-muted">London</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Lauren Taylor</a></div>
+                          <small class="text-muted">London</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a5.png" alt="..." class="img-circle">
                         <i class="on b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Chris Fox</a></div>
-                        <small class="text-muted">Milan</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Chris Fox</a></div>
+                          <small class="text-muted">Milan</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a6.png" alt="...">
                         <i class="on b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Amanda Conlan</a></div>
-                        <small class="text-muted">Copenhagen</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Amanda Conlan</a></div>
+                          <small class="text-muted">Copenhagen</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a7.png" alt="...">
                         <i class="busy b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Dan Doorack</a></div>
-                        <small class="text-muted">Barcelona</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Dan Doorack</a></div>
+                          <small class="text-muted">Barcelona</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a8.png" alt="...">
                         <i class="away b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Lauren Taylor</a></div>
-                        <small class="text-muted">Tokyo</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Lauren Taylor</a></div>
+                          <small class="text-muted">Tokyo</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a9.png" alt="..." class="img-circle">
                         <i class="on b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Chris Fox</a></div>
-                        <small class="text-muted">UK</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Chris Fox</a></div>
+                          <small class="text-muted">UK</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a1.png" alt="...">
                         <i class="on b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Amanda Conlan</a></div>
-                        <small class="text-muted">Africa</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Amanda Conlan</a></div>
+                          <small class="text-muted">Africa</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a2.png" alt="...">
                         <i class="busy b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Dan Doorack</a></div>
-                        <small class="text-muted">Paris</small>
-                      </div>
-                    </li>
-                    <li class="list-group-item">
+                        <div class="clear">
+                          <div><a href="#">Dan Doorack</a></div>
+                          <small class="text-muted">Paris</small>
+                        </div>
+                      </li>
+                      <li class="list-group-item">
                       <span class="pull-left thumb-xs m-t-xs avatar m-l-xs m-r-sm">
                         <img src="${pageContext.request.contextPath }/images/a3.png" alt="...">
                         <i class="away b-light right sm"></i>
                       </span>
-                      <div class="clear">
-                        <div><a href="#">Lauren Taylor</a></div>
-                        <small class="text-muted">Brussels</small>
-                      </div>
-                    </li>
-                  </ul>
-                </section>
-                <footer class="footer footer-md bg-black">
-                  <form class="" role="search">
-                    <div class="form-group clearfix m-b-none">
-                      <div class="input-group m-t m-b">
+                        <div class="clear">
+                          <div><a href="#">Lauren Taylor</a></div>
+                          <small class="text-muted">Brussels</small>
+                        </div>
+                      </li>
+                    </ul>
+                  </section>
+                  <footer class="footer footer-md bg-black">
+                    <form class="" role="search">
+                      <div class="form-group clearfix m-b-none">
+                        <div class="input-group m-t m-b">
                         <span class="input-group-btn">
                           <button type="submit" class="btn btn-sm bg-empty text-muted btn-icon"><i class="fa fa-search"></i></button>
                         </span>
-                        <input type="text" class="form-control input-sm text-white bg-empty b-b b-dark no-border" placeholder="Search members">
+                          <input type="text" class="form-control input-sm text-white bg-empty b-b b-dark no-border" placeholder="Search members">
+                        </div>
                       </div>
-                    </div>
-                  </form>
-                </footer>
-              </section>              
+                    </form>
+                  </footer>
+                </section>
+            </c:if>
+            <c:if test="${user == null}">
+              <div style="text-align:center;height: 100%;width: 100%;-moz-box-align: center;-webkit-box-align: center;-moz-box-pack: center; -webkit-box-pack: center;display: -moz-box;display: -webkit-box;">
+                <span>You need <a href="${pageContext.request.contextPath }/user/signin.action">Sign in</a> or <a href="${pageContext.request.contextPath }/user/signup.action">Sign up</a> us!</span>
+              </div>
+            </c:if>
+
+
             </aside>
             <!-- / side content -->
           </section>
