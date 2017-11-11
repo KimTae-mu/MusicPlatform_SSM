@@ -13,12 +13,15 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/simple-line-icons.css" type="text/css" />
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/font.css" type="text/css" />
+  <script src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>
   <link rel="stylesheet" href="${pageContext.request.contextPath }/css/app.css" type="text/css" />
     <!--[if lt IE 9]>
     <script src="${pageContext.request.contextPath }/js/ie/html5shiv.js"></script>
     <script src="${pageContext.request.contextPath }/js/ie/respond.min.js"></script>
     <script src="${pageContext.request.contextPath }/js/ie/excanvas.js"></script>
   <![endif]-->
+
+
 </head>
 <body class="">
   <section class="vbox">
@@ -119,7 +122,10 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                      <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a>
+                      <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Lock me</a>
+                    </li>
+                    <li>
+                      <a href="${pageContext.request.contextPath }/user/Logout.action" onClick="return confirm('确定退出?');">Logout</a>
                     </li>
                   </ul>
                 </li>

@@ -5,6 +5,7 @@ import com.msic.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -96,24 +97,67 @@ public class UserController {
         return null;
     }
 
-    @RequestMapping("/ReLogin")
-    public String ReLogin(String password,HttpServletRequest request) throws Exception{
+/*    @RequestMapping("/ReLogin")
+    public String ReLogin(String password,HttpServletRequest request,HttpServletResponse response) throws Exception{
 
         System.out.println("Relogin");
-//        if(password)
-
+        System.out.println("password" + password);
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
         User user1= userService.findUserByUsernameAndPwd(user.getUserEmail(), password);
 
-        if(user1 != null){
-            return "redirect:/jsp/index.jsp";
+        try {
+            PrintWriter writer = response.getWriter();
+            if(user1 != null){
+                System.out.println("no");
+                return "redirect:/jsp/index.jsp";
+            }else {
+                request.setAttribute("ReloginMsg","密码错误！！！");
+                return "modal.lockme";
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        else{
-            request.setAttribute("loginmsg","密码错误！！！");
-            return "modal.lockme";
+        return null;
+    }*/
+
+    @RequestMapping("/ReLogin")
+    @ResponseBody
+    public String ReLogin(String password,HttpServletRequest request,HttpServletResponse response) throws Exception{
+
+        System.out.println("Relogin");
+        System.out.println("password" + password);
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+
+        User user1= userService.findUserByUsernameAndPwd(user.getUserEmail(), password);
+
+        try {
+//            PrintWriter writer = response.getWriter();
+            if(user1 != null){
+                System.out.println(user1);
+                System.out.println("no");
+                return "yes";
+//                writer.print("yes");
+            }else {
+                System.out.println("密码错误");
+                request.setAttribute("ReloginMsg","密码错误！！！");
+                return "no";
+//                writer.print("no");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
+        return null;
+    }
+
+    @RequestMapping("/Logout")
+    public String Logout(HttpServletRequest request) throws Exception{
+        HttpSession session = request.getSession();
+        session.removeAttribute("user");
+
+        return "index";
     }
 
 }
