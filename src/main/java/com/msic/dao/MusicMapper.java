@@ -27,4 +27,6 @@ public interface MusicMapper {
     int updateByPrimaryKeySelective(Music record);
 
     int updateByPrimaryKey(Music record);
+
+    List<Music> selectMsicRandom();
 }

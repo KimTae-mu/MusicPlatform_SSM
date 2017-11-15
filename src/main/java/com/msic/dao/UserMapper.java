@@ -3,8 +3,6 @@ package com.msic.dao;
 import com.msic.pojo.User;
 import com.msic.pojo.UserExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {

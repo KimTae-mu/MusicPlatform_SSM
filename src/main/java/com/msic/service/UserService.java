@@ -10,4 +10,7 @@ public interface UserService {
     public User checkName(String userName);
 
     public User checkEmail(String userEmail);
+
+    public float[] MakeUser_matrix(User user);
+
 }

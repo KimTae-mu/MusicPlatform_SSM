@@ -1,6 +1,7 @@
 package com.msic.pojo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class MusicExample {
@@ -581,6 +582,126 @@ public class MusicExample {
 
         public Criteria andMsicLocationNotBetween(String value1, String value2) {
             addCriterion("msic_location not between", value1, value2, "msicLocation");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateIsNull() {
+            addCriterion("msic_date is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateIsNotNull() {
+            addCriterion("msic_date is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateEqualTo(Date value) {
+            addCriterion("msic_date =", value, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateNotEqualTo(Date value) {
+            addCriterion("msic_date <>", value, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateGreaterThan(Date value) {
+            addCriterion("msic_date >", value, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("msic_date >=", value, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateLessThan(Date value) {
+            addCriterion("msic_date <", value, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateLessThanOrEqualTo(Date value) {
+            addCriterion("msic_date <=", value, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateIn(List<Date> values) {
+            addCriterion("msic_date in", values, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateNotIn(List<Date> values) {
+            addCriterion("msic_date not in", values, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateBetween(Date value1, Date value2) {
+            addCriterion("msic_date between", value1, value2, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicDateNotBetween(Date value1, Date value2) {
+            addCriterion("msic_date not between", value1, value2, "msicDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesIsNull() {
+            addCriterion("msic_times is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesIsNotNull() {
+            addCriterion("msic_times is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesEqualTo(Integer value) {
+            addCriterion("msic_times =", value, "msicTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesNotEqualTo(Integer value) {
+            addCriterion("msic_times <>", value, "msicTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesGreaterThan(Integer value) {
+            addCriterion("msic_times >", value, "msicTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesGreaterThanOrEqualTo(Integer value) {
+            addCriterion("msic_times >=", value, "msicTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesLessThan(Integer value) {
+            addCriterion("msic_times <", value, "msicTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesLessThanOrEqualTo(Integer value) {
+            addCriterion("msic_times <=", value, "msicTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesIn(List<Integer> values) {
+            addCriterion("msic_times in", values, "msicTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesNotIn(List<Integer> values) {
+            addCriterion("msic_times not in", values, "msicTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesBetween(Integer value1, Integer value2) {
+            addCriterion("msic_times between", value1, value2, "msicTimes");
+            return (Criteria) this;
+        }
+
+        public Criteria andMsicTimesNotBetween(Integer value1, Integer value2) {
+            addCriterion("msic_times not between", value1, value2, "msicTimes");
             return (Criteria) this;
         }
 

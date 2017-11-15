@@ -9,6 +9,8 @@
     <result column="msic_pic" property="msicPic" jdbcType="VARCHAR" />
     <result column="msic_lrc" property="msicLrc" jdbcType="VARCHAR" />
     <result column="msic_location" property="msicLocation" jdbcType="VARCHAR" />
+    <result column="msic_date" property="msicDate" jdbcType="TIMESTAMP" />
+    <result column="msic_times" property="msicTimes" jdbcType="INTEGER" />
     <result column="exist" property="exist" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -70,7 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    msic_id, msic_name, msic_singer, msic_album, msic_pic, msic_lrc, msic_location, exist
+    msic_id, msic_name, msic_singer, msic_album, msic_pic, msic_lrc, msic_location, msic_date, 
+    msic_times, exist
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.msic.pojo.MusicExample" >
     select
@@ -105,10 +108,12 @@
   <insert id="insert" parameterType="com.msic.pojo.Music" >
     insert into music (msic_id, msic_name, msic_singer, 
       msic_album, msic_pic, msic_lrc, 
-      msic_location, exist)
+      msic_location, msic_date, msic_times, 
+      exist)
     values (#{msicId,jdbcType=INTEGER}, #{msicName,jdbcType=VARCHAR}, #{msicSinger,jdbcType=VARCHAR}, 
       #{msicAlbum,jdbcType=VARCHAR}, #{msicPic,jdbcType=VARCHAR}, #{msicLrc,jdbcType=VARCHAR}, 
-      #{msicLocation,jdbcType=VARCHAR}, #{exist,jdbcType=INTEGER})
+      #{msicLocation,jdbcType=VARCHAR}, #{msicDate,jdbcType=TIMESTAMP}, #{msicTimes,jdbcType=INTEGER}, 
+      #{exist,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.msic.pojo.Music" >
     insert into music
@@ -133,6 +138,12 @@
       </if>
       <if test="msicLocation != null" >
         msic_location,
+      </if>
+      <if test="msicDate != null" >
+        msic_date,
+      </if>
+      <if test="msicTimes != null" >
+        msic_times,
       </if>
       <if test="exist != null" >
         exist,
@@ -159,6 +170,12 @@
       </if>
       <if test="msicLocation != null" >
         #{msicLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="msicDate != null" >
+        #{msicDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="msicTimes != null" >
+        #{msicTimes,jdbcType=INTEGER},
       </if>
       <if test="exist != null" >
         #{exist,jdbcType=INTEGER},
@@ -195,6 +212,12 @@
       <if test="record.msicLocation != null" >
         msic_location = #{record.msicLocation,jdbcType=VARCHAR},
       </if>
+      <if test="record.msicDate != null" >
+        msic_date = #{record.msicDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.msicTimes != null" >
+        msic_times = #{record.msicTimes,jdbcType=INTEGER},
+      </if>
       <if test="record.exist != null" >
         exist = #{record.exist,jdbcType=INTEGER},
       </if>
@@ -212,6 +235,8 @@
       msic_pic = #{record.msicPic,jdbcType=VARCHAR},
       msic_lrc = #{record.msicLrc,jdbcType=VARCHAR},
       msic_location = #{record.msicLocation,jdbcType=VARCHAR},
+      msic_date = #{record.msicDate,jdbcType=TIMESTAMP},
+      msic_times = #{record.msicTimes,jdbcType=INTEGER},
       exist = #{record.exist,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -238,6 +263,12 @@
       <if test="msicLocation != null" >
         msic_location = #{msicLocation,jdbcType=VARCHAR},
       </if>
+      <if test="msicDate != null" >
+        msic_date = #{msicDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="msicTimes != null" >
+        msic_times = #{msicTimes,jdbcType=INTEGER},
+      </if>
       <if test="exist != null" >
         exist = #{exist,jdbcType=INTEGER},
       </if>
@@ -252,7 +283,15 @@
       msic_pic = #{msicPic,jdbcType=VARCHAR},
       msic_lrc = #{msicLrc,jdbcType=VARCHAR},
       msic_location = #{msicLocation,jdbcType=VARCHAR},
+      msic_date = #{msicDate,jdbcType=TIMESTAMP},
+      msic_times = #{msicTimes,jdbcType=INTEGER},
       exist = #{exist,jdbcType=INTEGER}
     where msic_id = #{msicId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectMsicRandom" resultType="com.msic.pojo.Music">
+    SELECT * FROM music AS m1 JOIN (SELECT round(rand() * ((SELECT MAX(msic_id) FROM music) - (SELECT MIN(msic_id) FROM music)) + (SELECT MIN(msic_id) FROM music)) AS id) AS m2
+    WHERE m1.msic_id >= m2.id
+    ORDER BY m1.msic_id limit 1;
+  </select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.msic.pojo;
 
+import java.util.Date;
+
 public class Music {
     private Integer msicId;
 
@@ -14,6 +16,10 @@ public class Music {
     private String msicLrc;
 
     private String msicLocation;
+
+    private Date msicDate;
+
+    private Integer msicTimes;
 
     private Integer exist;
 
@@ -71,6 +77,22 @@ public class Music {
 
     public void setMsicLocation(String msicLocation) {
         this.msicLocation = msicLocation == null ? null : msicLocation.trim();
+    }
+
+    public Date getMsicDate() {
+        return msicDate;
+    }
+
+    public void setMsicDate(Date msicDate) {
+        this.msicDate = msicDate;
+    }
+
+    public Integer getMsicTimes() {
+        return msicTimes;
+    }
+
+    public void setMsicTimes(Integer msicTimes) {
+        this.msicTimes = msicTimes;
     }
 
     public Integer getExist() {

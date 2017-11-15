@@ -92,19 +92,4 @@ public class User {
     public void setUserNotes(String userNotes) {
         this.userNotes = userNotes == null ? null : userNotes.trim();
     }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                ", userSex=" + userSex +
-                ", userEmail='" + userEmail + '\'' +
-                ", userBirthday=" + userBirthday +
-                ", userPic='" + userPic + '\'' +
-                ", exist=" + exist +
-                ", userNotes='" + userNotes + '\'' +
-                '}';
-    }
 }
