@@ -52,11 +52,14 @@ public class MsicController {
                 musicList.add(msicService.selectMsicById((int) msic_matrix[index-1][0]));
                 tip++;
             }while (tip < 9);
-
+            session.setAttribute("musicList",musicList);
         }else {
-            msicService.MakeRecom_matrix();
+            float[][] msic_matrix = msicService.MakeRecom_matrix();
+            for (int i=0;i<msic_matrix.length;i++)
+                musicList.add(msicService.selectMsicById((int) msic_matrix[i][0]));
+            session.setAttribute("musicList",musicList);
         }
 
-        return null;
+        return "redirect:/jsp/index.jsp";
     }
 }
