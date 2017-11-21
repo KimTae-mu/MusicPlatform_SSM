@@ -55,7 +55,7 @@
           </div>
         </div>
       </form>
-      <div class="navbar-right ">
+      <%--<div class="navbar-right ">
         <ul class="nav navbar-nav m-n hidden-xs nav-user user">
           <li class="hidden-xs">
             <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
@@ -122,7 +122,8 @@
             </ul>
           </li>
         </ul>
-      </div>      
+      </div>--%>
+      <%@include file="top.jsp"%>
     </header>
     <section>
       <section class="hbox stretch">
@@ -135,7 +136,7 @@
 
 
                 <!-- nav -->                 
-                <nav class="nav-primary hidden-xs">
+                <%--<nav class="nav-primary hidden-xs">
                   <ul class="nav bg clearfix">
                     <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
                       Discover
@@ -231,14 +232,14 @@
                         </li>
                         <li >
                           <a href="${pageContext.request.contextPath }/jsp/icons.jsp" class="auto">
-                            <b class="badge bg-info pull-right">369</b>                                                        
+                            <b class="badge bg-info pull-right">369</b>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Icons</span>
                           </a>
                         </li><li >
-                          <a href="http://www.weidea.net" class="auto">                            
-                            <b class="badge bg-info pull-right">369</b>                                                        
+                          <a href="http://www.weidea.net" class="auto">
+                            <b class="badge bg-info pull-right">369</b>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>More</span>
@@ -253,7 +254,7 @@
                         </li>
                         <li >
                           <a href="${pageContext.request.contextPath }/jsp/widgets.jsp" class="auto">
-                            <b class="badge bg-dark pull-right">8</b>                                                        
+                            <b class="badge bg-dark pull-right">8</b>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Widgets</span>
@@ -274,11 +275,11 @@
                           </a>
                         </li>
                         <li >
-                          <a href="#table" class="auto">                            
+                          <a href="#table" class="auto">
                             <span class="pull-right text-muted">
                               <i class="fa fa-angle-left text"></i>
                               <i class="fa fa-angle-down text-active"></i>
-                            </span>                            
+                            </span>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Table</span>
@@ -299,11 +300,11 @@
                           </ul>
                         </li>
                         <li  class="active">
-                          <a href="#form" class="auto">                            
+                          <a href="#form" class="auto">
                             <span class="pull-right text-muted">
                               <i class="fa fa-angle-left text"></i>
                               <i class="fa fa-angle-down text-active"></i>
-                            </span>                            
+                            </span>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Form</span>
@@ -441,8 +442,9 @@
                       </a>
                     </li>
                   </ul>
-                </nav>
+                </nav>--%>
                 <!-- / nav -->
+                <%@include file="nav.jsp"%>
               </div>
             </section>
             

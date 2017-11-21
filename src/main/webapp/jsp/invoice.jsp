@@ -27,7 +27,7 @@
         <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
           <i class="icon-list"></i>
         </a>
-        <a href="${pageContext.request.contextPath }/index.jsp" class="navbar-brand text-lt">
+        <a href="index.jsp" class="navbar-brand text-lt">
           <i class="icon-earphones"></i>
           <img src="${pageContext.request.contextPath }/images/logo.png" alt="." class="hide">
           <span class="hidden-nav-xs m-l-sm">Musik</span>
@@ -53,7 +53,7 @@
           </div>
         </div>
       </form>
-      <div class="navbar-right ">
+      <%--<div class="navbar-right ">
         <ul class="nav navbar-nav m-n hidden-xs nav-user user">
           <li class="hidden-xs">
             <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
@@ -120,7 +120,8 @@
             </ul>
           </li>
         </ul>
-      </div>      
+      </div>--%>
+      <%@include file="top.jsp"%>
     </header>
     <section>
       <section class="hbox stretch">
@@ -129,7 +130,6 @@
           <section class="vbox">
             <section class="w-f-md scrollable">
               <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
-                
 
 
                 <!-- nav -->                 
@@ -187,21 +187,21 @@
                       </a>
                       <ul class="nav dk text-sm">
                         <li >
-                          <a href="layout-color.jsp" class="auto">                                                        
+                          <a href="layout-color.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Color option</span>
                           </a>
                         </li>
                         <li >
-                          <a href="layout-boxed.jsp" class="auto">                                                        
+                          <a href="layout-boxed.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Boxed layout</span>
                           </a>
                         </li>
                         <li >
-                          <a href="layout-fluid.jsp" class="auto">                                                        
+                          <a href="layout-fluid.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Fluid layout</span>
@@ -221,62 +221,62 @@
                       </a>
                       <ul class="nav dk text-sm">
                         <li >
-                          <a href="buttons.jsp" class="auto">                                                        
+                          <a href="buttons.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Buttons</span>
                           </a>
                         </li>
                         <li >
-                          <a href="icons.jsp" class="auto">                            
-                            <b class="badge bg-info pull-right">369</b>                                                        
+                          <a href="icons.jsp" class="auto">
+                            <b class="badge bg-info pull-right">369</b>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Icons</span>
                           </a>
                         </li><li >
-                          <a href="http://www.weidea.net" class="auto">                            
-                            <b class="badge bg-info pull-right">369</b>                                                        
+                          <a href="http://www.weidea.net" class="auto">
+                            <b class="badge bg-info pull-right">369</b>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>More</span>
                           </a>
                         </li>
                         <li >
-                          <a href="grid.jsp" class="auto">                                                        
+                          <a href="grid.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Grid</span>
                           </a>
                         </li>
                         <li >
-                          <a href="widgets.jsp" class="auto">                            
-                            <b class="badge bg-dark pull-right">8</b>                                                        
+                          <a href="widgets.jsp" class="auto">
+                            <b class="badge bg-dark pull-right">8</b>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Widgets</span>
                           </a>
                         </li>
                         <li >
-                          <a href="components.jsp" class="auto">                                                        
+                          <a href="components.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Components</span>
                           </a>
                         </li>
                         <li >
-                          <a href="list.jsp" class="auto">                                                        
+                          <a href="list.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>List group</span>
                           </a>
                         </li>
                         <li >
-                          <a href="#table" class="auto">                            
+                          <a href="#table" class="auto">
                             <span class="pull-right text-muted">
                               <i class="fa fa-angle-left text"></i>
                               <i class="fa fa-angle-down text-active"></i>
-                            </span>                            
+                            </span>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Table</span>
@@ -297,11 +297,11 @@
                           </ul>
                         </li>
                         <li >
-                          <a href="#form" class="auto">                            
+                          <a href="#form" class="auto">
                             <span class="pull-right text-muted">
                               <i class="fa fa-angle-left text"></i>
                               <i class="fa fa-angle-down text-active"></i>
-                            </span>                            
+                            </span>
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Form</span>
@@ -328,21 +328,21 @@
                           </ul>
                         </li>
                         <li >
-                          <a href="chart.jsp" class="auto">                                                        
+                          <a href="chart.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Chart</span>
                           </a>
                         </li>
                         <li >
-                          <a href="portlet.jsp" class="auto">                                                        
+                          <a href="portlet.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Portlet</span>
                           </a>
                         </li>
                         <li >
-                          <a href="timeline.jsp" class="auto">                                                        
+                          <a href="timeline.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Timeline</span>
@@ -362,56 +362,56 @@
                       </a>
                       <ul class="nav dk text-sm">
                         <li >
-                          <a href="profile.jsp" class="auto">                                                        
+                          <a href="profile.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Profile</span>
                           </a>
                         </li>
                         <li >
-                          <a href="blog.jsp" class="auto">                                                        
+                          <a href="blog.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Blog</span>
                           </a>
                         </li>
                         <li  class="active">
-                          <a href="invoice.jsp" class="auto">                                                        
+                          <a href="invoice.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Invoice</span>
                           </a>
                         </li>
                         <li >
-                          <a href="gmap.jsp" class="auto">                                                        
+                          <a href="gmap.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Google Map</span>
                           </a>
                         </li>
                         <li >
-                          <a href="jvectormap.jsp" class="auto">                                                        
+                          <a href="jvectormap.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Vector Map</span>
                           </a>
                         </li>
                         <li >
-                          <a href="signin.jsp" class="auto">                                                        
+                          <a href="signin.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Signin</span>
                           </a>
                         </li>
                         <li >
-                          <a href="signup.jsp" class="auto">                                                        
+                          <a href="signup.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>Signup</span>
                           </a>
                         </li>
                         <li >
-                          <a href="404.jsp" class="auto">                                                        
+                          <a href="404.jsp" class="auto">
                             <i class="fa fa-angle-right text-xs"></i>
 
                             <span>404</span>
@@ -441,6 +441,7 @@
                   </ul>
                 </nav>
                 <!-- / nav -->
+                <%--<%@include file="nav.jsp"%>--%>
               </div>
             </section>
             

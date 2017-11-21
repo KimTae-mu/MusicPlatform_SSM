@@ -53,7 +53,7 @@
           </div>
         </div>
       </form>
-      <div class="navbar-right ">
+      <%--<div class="navbar-right ">
         <ul class="nav navbar-nav m-n hidden-xs nav-user user">
           <li class="hidden-xs">
             <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
@@ -120,7 +120,8 @@
             </ul>
           </li>
         </ul>
-      </div>      
+      </div>--%>
+      <%@include file="top.jsp"%>
     </header>
     <section>
       <section class="hbox stretch">
@@ -441,6 +442,7 @@
                   </ul>
                 </nav>
                 <!-- / nav -->
+                <%--<%@include file="nav.jsp"%>--%>
               </div>
             </section>
             

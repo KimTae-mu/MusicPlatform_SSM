@@ -56,7 +56,7 @@
           </div>
         </div>
       </form>
-      <div class="navbar-right ">
+      <%--<div class="navbar-right ">
         <ul class="nav navbar-nav m-n hidden-xs nav-user user">
 
 
@@ -140,12 +140,13 @@
               </li>
             </c:if>
         </ul>
-      </div>      
+      </div>--%>
+      <%@include file="top.jsp"%>
     </header>
     <section>
       <section class="hbox stretch">
         <!-- .aside -->
-        <aside class="bg-black dk nav-xs aside hidden-print" id="nav">          
+        <aside class="bg-black dk nav-xs aside hidden-print" id="nav">
           <section class="vbox">
             <section class="w-f-md scrollable">
               <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
@@ -153,7 +154,7 @@
 
 
                 <!-- nav -->                 
-                <nav class="nav-primary hidden-xs">
+                <%--<nav class="nav-primary hidden-xs">
                   <ul class="nav bg clearfix">
                     <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
                       Discover
@@ -459,28 +460,30 @@
                       </a>
                     </li>
                   </ul>
-                </nav>
+                </nav>--%>
+                <%@include file="nav.jsp"%>
                 <!-- / nav -->
               </div>
             </section>
-            
-            <footer class="footer hidden-xs no-padder text-center-nav-xs">
-              <div class="bg hidden-xs ">
+
+           <%-- <c:if test="${user != null}">
+              <footer class="footer hidden-xs no-padder text-center-nav-xs">
+                <div class="bg hidden-xs ">
                   <div class="dropdown dropup wrapper-sm clearfix">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <span class="thumb-sm avatar pull-left m-l-xs">                        
+                      <span class="thumb-sm avatar pull-left m-l-xs">
                         <img src="${pageContext.request.contextPath }/images/a3.png" class="dker" alt="...">
                         <i class="on b-black"></i>
                       </span>
                       <span class="hidden-nav-xs clear">
                         <span class="block m-l">
-                          <strong class="font-bold text-lt">John.Smith</strong> 
+                          <strong class="font-bold text-lt">${user.userName }</strong>
                           <b class="caret"></b>
                         </span>
                         <span class="text-muted text-xs block m-l">Art Director</span>
                       </span>
                     </a>
-                    <ul class="dropdown-menu animated fadeInRight aside text-left">                      
+                    <ul class="dropdown-menu animated fadeInRight aside text-left">
                       <li>
                         <span class="arrow bottom hidden-nav-xs"></span>
                         <a href="#">Settings</a>
@@ -499,11 +502,36 @@
                       </li>
                       <li class="divider"></li>
                       <li>
-                        <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Logout</a>
+                        <a href="modal.lockme.jsp" data-toggle="ajaxModal" >Lock me</a>
                       </li>
                     </ul>
                   </div>
-                </div>            </footer>
+                </div>
+              </footer>
+            </c:if>
+
+            <c:if test="${user == null}">
+              <footer class="footer hidden-xs no-padder text-center-nav-xs">
+                <div class="bg hidden-xs ">
+                  <div class="dropdown dropup wrapper-sm clearfix">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <span class="thumb-sm avatar pull-left m-l-xs">
+                        <img src="${pageContext.request.contextPath }/images/a3.png" class="dker" alt="...">
+                        &lt;%&ndash;<i class="on b-black"></i>&ndash;%&gt;
+                      </span>
+                      <span class="hidden-nav-xs clear">
+                        <span class="block m-l">
+                          <strong class="font-bold text-lt">用户未登录</strong>
+                          &lt;%&ndash;<b class="caret"></b>&ndash;%&gt;
+                        </span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </footer>
+            </c:if>--%>
+            <%@include file="footer.jsp"%>
+
           </section>
         </aside>
         <!-- /.aside -->

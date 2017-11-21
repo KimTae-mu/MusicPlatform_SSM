@@ -52,7 +52,7 @@
           </div>
         </div>
       </form>
-      <div class="navbar-right ">
+      <%--<div class="navbar-right ">
         <ul class="nav navbar-nav m-n hidden-xs nav-user user">
           <li class="hidden-xs">
             <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
@@ -119,7 +119,8 @@
             </ul>
           </li>
         </ul>
-      </div>      
+      </div>--%>
+      <%@include file="top.jsp"%>
     </header>
     <section>
       <section class="hbox stretch">
@@ -132,7 +133,8 @@
 
 
                 <!-- nav -->                 
-                <nav class="nav-primary hidden-xs">
+                <%--<nav class="nav-primary hidden-xs">
+
                   <ul class="nav bg clearfix">
                     <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
                       Discover
@@ -438,7 +440,8 @@
                       </a>
                     </li>
                   </ul>
-                </nav>
+                </nav>--%>
+                <%@include file="nav.jsp"%>
                 <!-- / nav -->
               </div>
             </section>

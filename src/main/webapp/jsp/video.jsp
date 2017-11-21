@@ -26,7 +26,7 @@
         <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
           <i class="icon-list"></i>
         </a>
-        <a href="${pageContext.request.contextPath }/index.jsp" class="navbar-brand text-lt">
+        <a href="index.jsp" class="navbar-brand text-lt">
           <i class="icon-earphones"></i>
           <img src="${pageContext.request.contextPath }/images/logo.png" alt="." class="hide">
           <span class="hidden-nav-xs m-l-sm">Musik</span>
@@ -52,7 +52,7 @@
           </div>
         </div>
       </form>
-      <div class="navbar-right ">
+      <%--<div class="navbar-right ">
         <ul class="nav navbar-nav m-n hidden-xs nav-user user">
           <li class="hidden-xs">
             <a href="#" class="dropdown-toggle lt" data-toggle="dropdown">
@@ -119,7 +119,8 @@
             </ul>
           </li>
         </ul>
-      </div>      
+      </div>--%>
+      <%@include file="top.jsp"%>
     </header>
     <section>
       <section class="hbox stretch">
@@ -132,7 +133,7 @@
 
 
                 <!-- nav -->                 
-                <nav class="nav-primary hidden-xs">
+              <%--  <nav class="nav-primary hidden-xs">
                   <ul class="nav bg clearfix">
                     <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
                       Discover
@@ -438,8 +439,9 @@
                       </a>
                     </li>
                   </ul>
-                </nav>
+                </nav>--%>
                 <!-- / nav -->
+                <%@include file="nav.jsp"%>
               </div>
             </section>
             
